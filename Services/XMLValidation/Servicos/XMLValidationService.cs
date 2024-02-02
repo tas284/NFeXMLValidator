@@ -48,7 +48,7 @@ namespace NFeXMLValidator.Services.Servicos
 
             if (validacao.Count() > 0)
             {
-                retorno = "Ocorreram os seguintes erros na validação:\n";
+                retorno = $"Ocorreram os seguintes erros na validação: ";
                 foreach(var item in validacao)
                 {
                     retorno += item;
@@ -70,7 +70,7 @@ namespace NFeXMLValidator.Services.Servicos
             }
             catch(Exception ex)
             {
-                throw new Exception("Houve um erro ao incluir os arquivos XSD para validar o arquivo XML.\n" + ex.Message);
+                throw new Exception($"Houve um erro ao incluir os arquivos XSD para validar o arquivo XML. {ex.Message}");
             }
 
             try
@@ -79,7 +79,7 @@ namespace NFeXMLValidator.Services.Servicos
             }
             catch(XmlSchemaValidationException ex)
             {
-                throw new Exception("Houve um erro ao executar a validação do documento XML.\n" + ex.Message);
+                throw new Exception($"Houve um erro ao executar a validação do documento XML. {ex.Message}");
             }
 
             return falhas;
@@ -107,6 +107,9 @@ namespace NFeXMLValidator.Services.Servicos
             mensagem = mensagem.Replace("The Pattern constraint failed.", "");
             mensagem = mensagem.Replace("The actual length is less than the MinLength value", "O comprimento real é menor que o valor MinLength");
             mensagem = mensagem.Replace(" in namespace 'http://www.w3.org/2000/09/xmldsig#'.", "");
+            mensagem = mensagem.Replace(" in namespace 'http://www.portalfiscal.inf.br/nfe'.", "");
+            mensagem = mensagem.Replace(" in namespace 'http://www.portalfiscal.inf.br/nfe'", "");
+            mensagem = mensagem.Replace("http://www.portalfiscal.inf.br/nfe:", "");
             mensagem = mensagem.Replace("The element", "O elemento");
             mensagem = mensagem.Replace("has invalid child element", "tem um elemento filho inválido");
             mensagem = mensagem.Replace("List of possible elements expected:", "Lista de possíveis elementos esperados:");
@@ -147,8 +150,6 @@ namespace NFeXMLValidator.Services.Servicos
             }
             else if (args.ParentNode.NodeType == XmlNodeType.Element)
             {
-                // Elemento atual é um nó com mais itens
-                // Chama o próprio método recursivamente, para obter toda a árvore da tag atual
                 return GetCaminhoTagXML(node) + @"/" + args.Name;
             }
             return "";
