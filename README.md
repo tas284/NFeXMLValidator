@@ -1,8 +1,8 @@
 ﻿# NFeXMLValidator
 
-#### Projeto de Validação de XML de NFe baseado nos XSD's disponibilizados no portal nacional da NFe
+#### NFe XML Validation Project based on XSD's available on the [Portal Nacional NFe](https://www.nfe.fazenda.gov.br/portal/principal.aspx).
 
-#### Este projeto é baseado no projeto de https://github.com/silvairsoares/web.api.xml.schema.validation
+#### This project is based on the [Github Project](https://github.com/silvairsoares/web.api.xml.schema.validation).
 
 
 ## Requirements
