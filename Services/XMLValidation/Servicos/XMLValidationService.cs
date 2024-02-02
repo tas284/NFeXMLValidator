@@ -33,11 +33,23 @@ namespace NFeXMLValidator.Services.Servicos
             ICollection<string> XSDFiles = new List<string>();
             try
             {
-                XSDFiles.Add(@"Services\XMLValidation\Schemas\procNFe_v4.00.xsd");
-                XSDFiles.Add(@"Services\XMLValidation\Schemas\nfe_v4.00.xsd");
-                XSDFiles.Add(@"Services\XMLValidation\Schemas\leiauteNFe_v4.00.xsd");
-                XSDFiles.Add(@"Services\XMLValidation\Schemas\tiposBasico_v4.00.xsd");
-                XSDFiles.Add(@"Services\XMLValidation\Schemas\xmldsig-core-schema_v1.01.xsd");
+                if(Environment.OSVersion.Platform == System.PlatformID.Unix)
+                {
+                    XSDFiles.Add(@"Schemas/procNFe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas/nfe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas/leiauteNFe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas/tiposBasico_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas/xmldsig-core-schema_v1.01.xsd");
+                }
+                else
+                {
+                    XSDFiles.Add(@"Schemas\procNFe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas\nfe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas\leiauteNFe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas\tiposBasico_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas\xmldsig-core-schema_v1.01.xsd");
+                }
+                
             }
             catch(Exception ex)
             {
@@ -48,7 +60,7 @@ namespace NFeXMLValidator.Services.Servicos
 
             if (validacao.Count() > 0)
             {
-                retorno = $"Ocorreram os seguintes erros na validação: ";
+                retorno = $"Validação do XML:";
                 foreach(var item in validacao)
                 {
                     retorno += item;
@@ -89,11 +101,11 @@ namespace NFeXMLValidator.Services.Servicos
         {
             if(args.Severity == XmlSeverityType.Warning)
             {
-                falhas.Add("Alerta: " + TraduzMensagensDeErro(args.Message) + " (Caminho: " + ObtemCaminho(args) + ")");
+                falhas.Add(" Alerta: " + TraduzMensagensDeErro(args.Message) + " (Caminho: " + ObtemCaminho(args) + ")");
             }
             if(args.Severity == XmlSeverityType.Error)
             {
-                falhas.Add("Erro: " + TraduzMensagensDeErro(args.Message) + " (Caminho: " + ObtemCaminho(args) + ")");
+                falhas.Add(" Erro: " + TraduzMensagensDeErro(args.Message) + " (Caminho: " + ObtemCaminho(args) + ")");
             }
         }
 
