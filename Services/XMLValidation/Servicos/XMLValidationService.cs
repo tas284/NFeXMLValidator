@@ -35,19 +35,19 @@ namespace NFeXMLValidator.Services.Servicos
             {
                 if(Environment.OSVersion.Platform == System.PlatformID.Unix)
                 {
-                    XSDFiles.Add(@"Services/XMLValidation/Schemas/procNFe_v4.00.xsd");
-                    XSDFiles.Add(@"Services/XMLValidation/Schemas/nfe_v4.00.xsd");
-                    XSDFiles.Add(@"Services/XMLValidation/Schemas/leiauteNFe_v4.00.xsd");
-                    XSDFiles.Add(@"Services/XMLValidation/Schemas/tiposBasico_v4.00.xsd");
-                    XSDFiles.Add(@"Services/XMLValidation/Schemas/xmldsig-core-schema_v1.01.xsd");
+                    XSDFiles.Add(@"Schemas/procNFe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas/nfe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas/leiauteNFe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas/tiposBasico_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas/xmldsig-core-schema_v1.01.xsd");
                 }
                 else
                 {
-                    XSDFiles.Add(@"Services\XMLValidation\Schemas\procNFe_v4.00.xsd");
-                    XSDFiles.Add(@"Services\XMLValidation\Schemas\nfe_v4.00.xsd");
-                    XSDFiles.Add(@"Services\XMLValidation\Schemas\leiauteNFe_v4.00.xsd");
-                    XSDFiles.Add(@"Services\XMLValidation\Schemas\tiposBasico_v4.00.xsd");
-                    XSDFiles.Add(@"Services\XMLValidation\Schemas\xmldsig-core-schema_v1.01.xsd");
+                    XSDFiles.Add(@"Schemas\procNFe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas\nfe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas\leiauteNFe_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas\tiposBasico_v4.00.xsd");
+                    XSDFiles.Add(@"Schemas\xmldsig-core-schema_v1.01.xsd");
                 }
                 
             }
