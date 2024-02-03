@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "web.api.xml.schema.validation": {
+    "NFeXMLValidator": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
@@ -30,7 +30,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:5001/swagger",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
       "publishAllPorts": true
     }
   }
