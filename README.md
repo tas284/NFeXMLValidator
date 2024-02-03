@@ -2,7 +2,7 @@
 
 #### NFe XML Validation Project based on XSD's available on the [Portal Nacional NFe](https://www.nfe.fazenda.gov.br/portal/principal.aspx).
 
-#### This project is based on the [Github Project](https://github.com/silvairsoares/web.api.xml.schema.validation).
+#### This project is based on the Github Project: https://github.com/silvairsoares/web.api.xml.schema.validation
 
 
 ## Requirements
@@ -11,6 +11,10 @@ SDK net6.0
 ## Build and Run
 
 To run this project enter the root directory and run `dotnet build` && `dotnet run`
+
+## Run Backend in mode production with docker
+
+Run `docker compose -f .\docker-compose.prod.yml up`
 
 ## Run With `docker compose`
 
@@ -34,7 +38,7 @@ If you set the environment variable ASPNETCORE_ENVIRONMENT to Develpment, [Swagg
 
 You can also set the environment variable ASPNETCORE_ENVIRONMENT for Production to disable [Swagger UI](https://swagger.io/tools/swagger-ui/).
 
-Try in browser: http://localhost:5000/swagger/index.html
+Try in browser: http://localhost:5001/swagger/index.html
 
 ## Dockerhub
 
