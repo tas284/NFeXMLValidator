@@ -8,7 +8,6 @@ namespace NFeXMLValidator.Services
     public class XMLValidator : IXMLValidator
     {
         private static readonly ICollection<string> fails = new List<string>();
-
         public string ValidateNFe(string xml)
         {
             try
@@ -122,6 +121,5 @@ namespace NFeXMLValidator.Services
                 fails.Add(" Erro: " + NFeHelper.ConvertErrorMessages(args.Message) + " (Caminho: " + NFeHelper.GetPath(args) + ")");
             }
         }
-        
     }
 }
