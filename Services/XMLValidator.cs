@@ -14,13 +14,11 @@ namespace NFeXMLValidator.Services
             try
             {
                 XmlDocument doc = LoadXmlDocument(xml);
-
                 string fails = ExecuteValidation(doc);
 
                 if (fails.Count() > 0)
                     return fails;
-                else
-                    return "Arquivo validado com sucesso!";
+                return "Arquivo validado com sucesso!";
             }
             catch (Exception ex)
             {
